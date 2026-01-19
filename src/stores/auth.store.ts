@@ -1,19 +1,33 @@
-import { defineStore } from 'pinia';
-import { ref } from 'vue';
+import { defineStore } from 'pinia'
+import { ref, computed } from 'vue'
 
 export const useAuthStore = defineStore('auth', () => {
-  const isAuthenticated = ref(false);
-  const user = ref<{ email: string } | null>(null);
+  // state
+  const user = ref<{ name: string } | null>(null)
+  const token = ref<string | null>(null)
 
-  function login(email: string, _password: string) {
-    isAuthenticated.value = true;
-    user.value = { email };
+  // getters
+  const isAuthenticated = computed(() => !!token.value)
+
+  // actions
+  function login(email: string, password: string) {
+    // 🔹 mock de login (simula API)
+    if (email && password) {
+      user.value = { name: 'Filipe Corrêa' }
+      token.value = 'fake-jwt-token'
+    }
   }
 
   function logout() {
-    isAuthenticated.value = false;
-    user.value = null;
+    user.value = null
+    token.value = null
   }
 
-  return { isAuthenticated, user, login, logout };
-});
+  return {
+    user,
+    token,
+    isAuthenticated,
+    login,
+    logout
+  }
+})
