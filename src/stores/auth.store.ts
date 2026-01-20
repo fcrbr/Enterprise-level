@@ -17,22 +17,16 @@ export const useAuthStore = defineStore('auth', () => {
 
   const isAuthenticated = computed(() => !!token.value)
 
- async function login(email: string, password: string) {
-  if (!email || !password) return
-
-  // 🔹 Simulando API
-  const response = {
-    data: {
-      token: 'fake-jwt-token',
-      user: { name: 'Filipe Corrêa' }
-    }
-  }
+async function login(email: string, password: string) {
+  const response = await api.post('/login', { email, password })
 
   token.value = response.data.token
   user.value = response.data.user
 
-  localStorage.setItem('token', token.value)
-  localStorage.setItem('user', JSON.stringify(user.value))
+  if (token.value) {
+    localStorage.setItem('token', token.value)
+    localStorage.setItem('user', JSON.stringify(user.value))
+  }
 }
 
   function logout() {

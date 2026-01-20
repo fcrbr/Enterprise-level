@@ -6,7 +6,7 @@ const api = axios.create({
   timeout: 10000
 })
 
-// 👉 Request interceptor (antes de enviar)
+// Request interceptor (antes de enviar)
 api.interceptors.request.use(
   (config) => {
     const auth = useAuthStore()
@@ -20,7 +20,7 @@ api.interceptors.request.use(
   (error) => Promise.reject(error)
 )
 
-// 👉 Response interceptor (erros)
+// Response interceptor (erros)
 api.interceptors.response.use(
   (response) => response,
   (error) => {
