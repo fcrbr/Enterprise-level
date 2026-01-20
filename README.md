@@ -1,5 +1,90 @@
-# Vue 3 + TypeScript + Vite
+# Vue Enterprise Dashboard
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+A modern enterprise-ready dashboard built with Vue 3, TypeScript, Tailwind CSS and Pinia.
+This project was designed to demonstrate real-world frontend architecture, authentication flow, protected routes, and scalable UI components.
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+> Portfolio project focused on frontend engineering best practices.
+
+---
+
+## Features
+
+- Authentication flow (login + route guards)
+- Global state management with Pinia
+- Corporate dashboard layout (metrics & activity feed)
+- Responsive UI with Tailwind CSS
+- Reusable and modular Vue components
+- Built with Vite for fast development
+- Protected routes using Vue Router
+- Ready for real API integration (JWT)
+
+---
+
+## Tech Stack
+
+- **Vue 3** (Composition API)
+- **TypeScript**
+- **Vite**
+- **Tailwind CSS v4**
+- **Pinia**
+- **Vue Router**
+- **PostCSS**
+
+---
+
+## 📂 Project Structure
+
+src/
+├─ components/
+│ └─ Dashboard/
+├─ views/
+│ ├─ LoginView.vue
+│ └─ DashboardView.vue
+├─ stores/
+│ └─ auth.store.ts
+├─ router/
+│ └─ index.ts
+├─ assets/
+└─ main.ts
+
+
+---
+
+## Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/SEU-USUARIO/vue-enterprise-dashboard.git
+cd vue-enterprise-dashboard
+
+npm install
+npm run dev
+http://localhost:5173
+
+🔐 Authentication (Development)
+
+For development purposes, authentication is mocked.
+The structure is ready to integrate with a real backend using JWT tokens.
+
+Roadmap
+
+ Role-based access control (Admin / User)
+
+ API integration (Laravel or Node.js)
+
+ Real charts with data visualization
+
+ Production deployment (VPS + HTTPS)
+
+ Unit & E2E tests
+
+Author
+
+Filipe Corrêa
+Frontend / Full Stack Developer
+20+ years of experience building web applications
+
+📄 License
+
+This project is for portfolio and educational purposes.
