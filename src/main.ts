@@ -7,10 +7,10 @@ import router from './router'
 
 //const app = createApp(App)
 
-//app.use(createPinia()) // 🍍 REGISTRA O PINIA
+//app.use(createPinia()) 
 //app.use(router)
 
 createApp(App)
   .use(createPinia())
-  .use(router)   // 👈 ESSENCIAL
+  .use(router)  
   .mount('#app')
